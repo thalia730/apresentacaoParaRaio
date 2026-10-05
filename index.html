@@ -1,166 +1,418 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para-Raios | Física</title>
+    <title>Para-Raios | Entenda como funciona</title>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <!-- ============================== MENU SUPERIOR =============================== -->
+
     <header class="menu">
-        <div class="logo">
-            ⚡ PARA-RAIOS
-        </div>
+        <div class="logo">⚡ PARA-RAIOS</div>
+
         <nav>
             <button onclick="mostrarTela('inicio')">Início</button>
             <button onclick="mostrarTela('tipos')">Tipos</button>
-            <button onclick="mostrarTela('sem')">Sem proteção</button>
-            <button onclick="mostrarTela('com')">Com proteção</button>
+            <button onclick="mostrarTela('sem')">Sem Para-Raios</button>
+            <button onclick="mostrarTela('com')">Com Para-Raios</button>
         </nav>
-        <!-- Controle da chuva -->
-        <button id="botao-chuva" onclick="alternarChuva()"> 🌧️ Pausar chuva </button>
+
+        <button id="botao-chuva" class="botao-chuva" onclick="alternarChuva()">
+            🌧️ Ativar chuva
+        </button>
     </header>
 
-    <!-- ============================== TELA INICIAL =============================== -->
-    <section id="inicio" class="tela ativa">
-        <div class="conteudo-inicio">
-            <p class="pequeno-titulo"> TRABALHO DE FÍSICA </p>
-            <h1>PARA-RAIOS</h1>
-            <h2>Entenda como funciona</h2>
-            <p class="descricao-inicio"> Uma apresentação interativa sobre descargas atmosféricas e sistemas de proteção. </p>
-            <p class="nomes">
-                <strong>Dupla:</strong> Thalia e Danielle
-            </p>
-            <button class="botao-iniciar" onclick="mostrarTela('tipos')"> COMEÇAR </button>
-        </div>
-    </section>
 
-    <!-- ============================== TELA DOS TIPOS =============================== -->
-    <section id="tipos" class="tela">
-        <div class="conteudo">
-            <p class="numero-secao"> 01 — CONHECENDO O PARA-RAIOS </p>
-            <h1>Tipos de Para-Raios</h1>
-            <p class="texto-introducao"> Existem diferentes tipos de sistemas utilizados para proteger construções contra descargas atmosféricas. </p>
-            
-            <!-- Três tipos -->
-            <div class="tipos-container">
-                <!-- Tipo 1 -->
-                <div class="tipo">
-                    <div class="imagem-tipo">
-                        <img src="imagens/tipo1.jpg" alt="Primeiro tipo de para-raios">
+    <main>
+
+        <!-- INÍCIO -->
+        <section id="inicio" class="tela ativa tela-inicio">
+
+            <div class="conteudo-inicio">
+
+                <div class="simbolo-raio">⚡</div>
+
+                <h1>PARA-RAIOS</h1>
+
+                <p>Entenda como funciona</p>
+
+                <span class="nomes">Thalia e Danielle</span>
+
+                <button class="botao-principal" onclick="mostrarTela('tipos')">
+                    COMEÇAR
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- TIPOS -->
+        <section id="tipos" class="tela">
+
+            <div class="conteudo-secao">
+
+                <h2>Tipos de Para-Raios</h2>
+
+                <p class="introducao">
+                    Existem diferentes formas de proteger construções contra descargas elétricas.
+                </p>
+
+
+                <div class="cards-tipos">
+
+                    <div class="card-tipo">
+
+                        <div class="imagem-tipo">
+                            <img src="imagens/imagem1.jpeg" alt="Para-raios tradicional">
+                        </div>
+
+                        <h3>Franklin</h3>
+
+                        <p>
+                            É o modelo tradicional. Utiliza uma haste metálica
+                            pontiaguda instalada no ponto mais alto da construção.
+                            A descarga é conduzida com segurança até o solo.
+                        </p>
+
                     </div>
-                    <h2>Tipo 1</h2>
-                    <p> Coloque aqui a explicação sobre o primeiro tipo de para-raios. </p>
-                </div>
-                <!-- Tipo 2 -->
-                <div class="tipo">
-                    <div class="imagem-tipo">
-                        <img src="imagens/tipo2.jpg" alt="Segundo tipo de para-raios">
+
+
+                    <div class="card-tipo">
+
+                        <div class="imagem-tipo">
+                            <img src="imagens/imagem2.jpeg" alt="Gaiola de Faraday">
+                        </div>
+
+                        <h3>Melsens — Gaiola de Faraday</h3>
+
+                        <p>
+                            Utiliza uma malha de condutores metálicos que envolve
+                            a construção. A corrente elétrica é distribuída pelos
+                            condutores e conduzida até o aterramento.
+                        </p>
+
                     </div>
-                    <h2>Tipo 2</h2>
-                    <p> Coloque aqui a explicação sobre o segundo tipo de para-raios. </p>
-                </div>
-                <!-- Tipo 3 -->
-                <div class="tipo">
-                    <div class="imagem-tipo">
-                        <img src="imagens/tipo3.jpg" alt="Terceiro tipo de para-raios">
+
+
+                    <div class="card-tipo">
+
+                        <div class="imagem-tipo">
+                            <img src="imagens/imagem3.jpeg" alt="Para-raios ionizante">
+                        </div>
+
+                        <h3>Ionizante — PDI</h3>
+
+                        <p>
+                            É um sistema ativo que utiliza um dispositivo capaz
+                            de emitir um sinal antecipado para favorecer a captura
+                            da descarga elétrica.
+                        </p>
+
                     </div>
-                    <h2>Tipo 3</h2>
-                    <p> Coloque aqui a explicação sobre o terceiro tipo de para-raios. </p>
+
                 </div>
+
             </div>
 
-            <!-- Navegação -->
-            <div class="botoes-navegacao">
-                <button onclick="mostrarTela('inicio')"> ← Voltar </button>
-                <button onclick="mostrarTela('sem')"> Próximo → </button>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ============================== TELA SEM PARA-RAIOS =============================== -->
-    <section id="sem" class="tela">
-        <div class="conteudo">
-            <p class="numero-secao"> 02 — SEM PROTEÇÃO </p>
-            <h1>O que acontece sem um para-raios?</h1>
-            <p class="texto-introducao"> Agora vamos observar o que pode acontecer quando uma descarga atmosférica atinge uma construção sem um sistema adequado de proteção. </p>
-            
-            <!-- Cenário -->
-            <div class="cenario">
-                <div class="nuvens"> ☁️ ☁️ ☁️ </div>
-                <div id="raio-sem" class="raio"> ⚡ </div>
-                <div class="predio"> 🏢 </div>
-            </div>
 
-            <!-- Botão do raio -->
-            <button class="botao-raio" onclick="acionarRaio('sem')"> ⚡ ACIONAR RAIO </button>
-            
-            <div class="explicacao">
-                <h2>Observe o que acontece</h2>
-                <p> Clique no botão para observar uma descarga atmosférica atingindo o prédio. </p>
-            </div>
+        <!-- SEM PARA-RAIOS -->
+        <section id="sem" class="tela">
 
-            <!-- Navegação -->
-            <div class="botoes-navegacao">
-                <button onclick="mostrarTela('tipos')"> ← Voltar </button>
-                <button onclick="mostrarTela('com')"> Próximo → </button>
-            </div>
-        </div>
-    </section>
+            <div class="conteudo-secao">
 
-    <!-- ============================== TELA COM PARA-RAIOS =============================== -->
-    <section id="com" class="tela">
-        <div class="conteudo">
-            <p class="numero-secao"> 03 — COM PROTEÇÃO </p>
-            <h1>O que acontece com um para-raios?</h1>
-            <p class="texto-introducao"> Agora vamos observar como o sistema de proteção oferece um caminho adequado para a descarga elétrica chegar até o solo. </p>
+                <h2>O que acontece sem um para-raios?</h2>
 
-            <!-- Cenário -->
-            <div class="cenario">
-                <div class="nuvens"> ☁️ ☁️ ☁️ </div>
-                <div id="raio-com" class="raio"> ⚡ </div>
-                <div class="predio-com">
-                    <!-- Para-raios -->
-                    <div class="haste-para-raios"> ⚡ </div>
-                    <!-- Prédio -->
-                    <div class="predio"> 🏢 </div>
-                    <!-- Caminho até o solo -->
-                    <div class="aterramento">
-                        │<br>│<br>│<br>↓
+                <p class="introducao">
+                    Clique no botão para provocar uma descarga elétrica
+                    e observe os riscos para a construção.
+                </p>
+
+
+                <div class="cenario-area">
+
+                    <div class="cenario" id="cenario-sem">
+
+                        <div class="ceu"></div>
+
+                        <div class="nuvens">
+                            <span class="nuvem nuvem-1"></span>
+                            <span class="nuvem nuvem-2"></span>
+                            <span class="nuvem nuvem-3"></span>
+                        </div>
+
+
+                        <div class="chuva-local">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+
+                        <svg id="raio-sem" class="raio" viewBox="0 0 100 200">
+                            <polyline
+                                points="50,0 35,60 48,60 25,125 43,112 38,180"
+                            />
+                        </svg>
+
+
+                        <div class="predio" id="predio-sem">
+
+                            <div class="telhado"></div>
+
+                            <div class="corpo-predio">
+
+                                <div class="janela"></div>
+                                <div class="janela"></div>
+                                <div class="janela"></div>
+
+                                <div class="janela"></div>
+                                <div class="janela"></div>
+                                <div class="janela"></div>
+
+                                <div class="porta"></div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="hotspot hotspot-1"
+                             onclick="abrirModal('sem', '💡', 'Queda de energia e surto elétrico', 'A descarga elétrica pode atingir a instalação e provocar um grande surto de tensão, causando apagões e danos em equipamentos.')">
+                        </div>
+
+
+                        <div class="hotspot hotspot-2"
+                             onclick="abrirModal('sem', '🚿', 'Risco de choque em torneiras e chuveiros', 'A corrente elétrica pode se espalhar por estruturas metálicas e tubulações. Durante uma tempestade, isso aumenta o risco de choque elétrico.')">
+                        </div>
+
+
+                        <div class="hotspot hotspot-3"
+                             onclick="abrirModal('sem', '🔥', 'Risco de incêndio', 'A grande quantidade de energia liberada por uma descarga pode provocar aquecimento intenso, danificar estruturas e iniciar incêndios.')">
+                        </div>
+
+
+                        <div class="solo-chao"></div>
+
                     </div>
-                    <p class="solo"> SOLO </p>
+
+
+                    <div id="modal-info-sem" class="painel-info hidden">
+
+                        <button class="fechar-modal" onclick="fecharModal('sem')">
+                            ×
+                        </button>
+
+                        <div id="modal-icone-sem" class="modal-icone"></div>
+
+                        <h3 id="modal-titulo-sem"></h3>
+
+                        <p id="modal-texto-sem"></p>
+
+                    </div>
+
                 </div>
+
+
+                <button class="botao-raio" onclick="acionarRaio('sem')">
+                    ⚡ ATIVAR RAIO
+                </button>
+
+
+                <div class="explicacao">
+                    <h3>Sem proteção</h3>
+
+                    <p>
+                        Quando um raio atinge uma construção sem proteção adequada,
+                        a descarga pode causar danos elétricos, incêndios e colocar
+                        pessoas em risco.
+                    </p>
+                </div>
+
             </div>
 
-            <!-- Botão do raio -->
-            <button class="botao-raio" onclick="acionarRaio('com')"> ⚡ ACIONAR RAIO </button>
+        </section>
 
-            <div class="explicacao">
-                <h2>Observe a diferença</h2>
-                <p> Clique no botão para observar como a descarga é direcionada pelo sistema de proteção até o solo. </p>
+
+        <!-- COM PARA-RAIOS -->
+        <section id="com" class="tela">
+
+            <div class="conteudo-secao">
+
+                <h2>Como funciona com um para-raios?</h2>
+
+                <p class="introducao">
+                    Agora observe como a energia é capturada e conduzida
+                    com segurança até o solo.
+                </p>
+
+
+                <div class="cenario-area">
+
+                    <div class="cenario" id="cenario-com">
+
+                        <div class="ceu"></div>
+
+                        <div class="nuvens">
+                            <span class="nuvem nuvem-1"></span>
+                            <span class="nuvem nuvem-2"></span>
+                            <span class="nuvem nuvem-3"></span>
+                        </div>
+
+
+                        <div class="chuva-local">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+
+                        <svg id="raio-com" class="raio" viewBox="0 0 100 200">
+                            <polyline
+                                points="50,0 35,60 48,60 25,125 43,112 38,180"
+                            />
+                        </svg>
+
+
+                        <div class="predio predio-protegido" id="predio-com">
+
+                            <div class="gaiola-faraday">
+
+                                <div class="malha-vertical"></div>
+                                <div class="malha-horizontal"></div>
+
+                                <div class="captor-superior"></div>
+
+                            </div>
+
+
+                            <div class="corpo-predio">
+
+                                <div class="janela"></div>
+                                <div class="janela"></div>
+                                <div class="janela"></div>
+
+                                <div class="janela"></div>
+                                <div class="janela"></div>
+                                <div class="janela"></div>
+
+                                <div class="porta"></div>
+
+                            </div>
+
+
+                            <div id="fio-aterramento" class="fio-aterramento"></div>
+
+                        </div>
+
+
+                        <div class="hotspot hotspot-com hotspot-com-1"
+                             onclick="abrirModal('com', '🛡️', 'Proteção da estrutura', 'A estrutura metálica ao redor da construção ajuda a receber e distribuir a descarga elétrica, evitando que ela atravesse diretamente o prédio.')">
+                        </div>
+
+
+                        <div class="hotspot hotspot-com hotspot-com-2"
+                             onclick="abrirModal('com', '⚡', 'Condução segura ao solo', 'Os condutores levam a corrente elétrica pela parte externa da construção até o sistema de aterramento, conduzindo a energia para o solo.')">
+                        </div>
+
+
+                        <div class="hotspot hotspot-com hotspot-com-3"
+                             onclick="abrirModal('com', '🏠', 'Proteção dos equipamentos', 'Ao conduzir a descarga de forma controlada para o solo, o sistema reduz o risco de a corrente atingir diretamente a instalação elétrica interna.')">
+                        </div>
+
+
+                        <div class="solo-chao">
+
+                            <div class="zona-aterramento"></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="modal-info-com" class="painel-info hidden">
+
+                        <button class="fechar-modal" onclick="fecharModal('com')">
+                            ×
+                        </button>
+
+                        <div id="modal-icone-com" class="modal-icone"></div>
+
+                        <h3 id="modal-titulo-com"></h3>
+
+                        <p id="modal-texto-com"></p>
+
+                    </div>
+
+                </div>
+
+
+                <button class="botao-raio botao-protecao" onclick="acionarRaio('com')">
+                    ⚡ ATIVAR RAIO
+                </button>
+
+
+                <div class="explicacao explicacao-protecao">
+
+                    <h3>Com proteção</h3>
+
+                    <p>
+                        O sistema de proteção cria um caminho controlado para
+                        a descarga elétrica, levando a corrente até o solo
+                        por meio dos condutores e do aterramento.
+                    </p>
+
+                </div>
+
             </div>
 
-            <!-- Navegação -->
-            <div class="botoes-navegacao">
-                <button onclick="mostrarTela('sem')"> ← Voltar </button>
-                <button onclick="mostrarTela('inicio')"> Voltar ao início </button>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ============================== ÁUDIO =============================== -->
+    </main>
+
+
     <audio id="chuva" loop>
-        <source src="sons/chuva.mp3" type="audio/mpeg">
+        <source src="sons/chuva.mp4" type="audio/mp4">
     </audio>
+
+
     <audio id="trovao">
-        <source src="sons/trovao.mp3" type="audio/mpeg">
+        <source src="sons/trovao.mp4" type="audio/mp4">
     </audio>
 
-    <!-- ============================== JAVASCRIPT =============================== -->
-    <script src="js/script.js"></script>
-</body>
 
+    <script src="js/script.js"></script>
+
+</body>
 </html>
