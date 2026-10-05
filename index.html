@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para-Raios | Física</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- ============================== MENU SUPERIOR =============================== -->
+    <header class="menu">
+        <div class="logo">
+            ⚡ PARA-RAIOS
+        </div>
+        <nav>
+            <button onclick="mostrarTela('inicio')">Início</button>
+            <button onclick="mostrarTela('tipos')">Tipos</button>
+            <button onclick="mostrarTela('sem')">Sem proteção</button>
+            <button onclick="mostrarTela('com')">Com proteção</button>
+        </nav>
+        <!-- Controle da chuva -->
+        <button id="botao-chuva" onclick="alternarChuva()"> 🌧️ Pausar chuva </button>
+    </header>
+
+    <!-- ============================== TELA INICIAL =============================== -->
+    <section id="inicio" class="tela ativa">
+        <div class="conteudo-inicio">
+            <p class="pequeno-titulo"> TRABALHO DE FÍSICA </p>
+            <h1>PARA-RAIOS</h1>
+            <h2>Entenda como funciona</h2>
+            <p class="descricao-inicio"> Uma apresentação interativa sobre descargas atmosféricas e sistemas de proteção. </p>
+            <p class="nomes">
+                <strong>Dupla:</strong> Thalia e Danielle
+            </p>
+            <button class="botao-iniciar" onclick="mostrarTela('tipos')"> COMEÇAR </button>
+        </div>
+    </section>
+
+    <!-- ============================== TELA DOS TIPOS =============================== -->
+    <section id="tipos" class="tela">
+        <div class="conteudo">
+            <p class="numero-secao"> 01 — CONHECENDO O PARA-RAIOS </p>
+            <h1>Tipos de Para-Raios</h1>
+            <p class="texto-introducao"> Existem diferentes tipos de sistemas utilizados para proteger construções contra descargas atmosféricas. </p>
+            
+            <!-- Três tipos -->
+            <div class="tipos-container">
+                <!-- Tipo 1 -->
+                <div class="tipo">
+                    <div class="imagem-tipo">
+                        <img src="imagens/tipo1.jpg" alt="Primeiro tipo de para-raios">
+                    </div>
+                    <h2>Tipo 1</h2>
+                    <p> Coloque aqui a explicação sobre o primeiro tipo de para-raios. </p>
+                </div>
+                <!-- Tipo 2 -->
+                <div class="tipo">
+                    <div class="imagem-tipo">
+                        <img src="imagens/tipo2.jpg" alt="Segundo tipo de para-raios">
+                    </div>
+                    <h2>Tipo 2</h2>
+                    <p> Coloque aqui a explicação sobre o segundo tipo de para-raios. </p>
+                </div>
+                <!-- Tipo 3 -->
+                <div class="tipo">
+                    <div class="imagem-tipo">
+                        <img src="imagens/tipo3.jpg" alt="Terceiro tipo de para-raios">
+                    </div>
+                    <h2>Tipo 3</h2>
+                    <p> Coloque aqui a explicação sobre o terceiro tipo de para-raios. </p>
+                </div>
+            </div>
+
+            <!-- Navegação -->
+            <div class="botoes-navegacao">
+                <button onclick="mostrarTela('inicio')"> ← Voltar </button>
+                <button onclick="mostrarTela('sem')"> Próximo → </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== TELA SEM PARA-RAIOS =============================== -->
+    <section id="sem" class="tela">
+        <div class="conteudo">
+            <p class="numero-secao"> 02 — SEM PROTEÇÃO </p>
+            <h1>O que acontece sem um para-raios?</h1>
+            <p class="texto-introducao"> Agora vamos observar o que pode acontecer quando uma descarga atmosférica atinge uma construção sem um sistema adequado de proteção. </p>
+            
+            <!-- Cenário -->
+            <div class="cenario">
+                <div class="nuvens"> ☁️ ☁️ ☁️ </div>
+                <div id="raio-sem" class="raio"> ⚡ </div>
+                <div class="predio"> 🏢 </div>
+            </div>
+
+            <!-- Botão do raio -->
+            <button class="botao-raio" onclick="acionarRaio('sem')"> ⚡ ACIONAR RAIO </button>
+            
+            <div class="explicacao">
+                <h2>Observe o que acontece</h2>
+                <p> Clique no botão para observar uma descarga atmosférica atingindo o prédio. </p>
+            </div>
+
+            <!-- Navegação -->
+            <div class="botoes-navegacao">
+                <button onclick="mostrarTela('tipos')"> ← Voltar </button>
+                <button onclick="mostrarTela('com')"> Próximo → </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== TELA COM PARA-RAIOS =============================== -->
+    <section id="com" class="tela">
+        <div class="conteudo">
+            <p class="numero-secao"> 03 — COM PROTEÇÃO </p>
+            <h1>O que acontece com um para-raios?</h1>
+            <p class="texto-introducao"> Agora vamos observar como o sistema de proteção oferece um caminho adequado para a descarga elétrica chegar até o solo. </p>
+
+            <!-- Cenário -->
+            <div class="cenario">
+                <div class="nuvens"> ☁️ ☁️ ☁️ </div>
+                <div id="raio-com" class="raio"> ⚡ </div>
+                <div class="predio-com">
+                    <!-- Para-raios -->
+                    <div class="haste-para-raios"> ⚡ </div>
+                    <!-- Prédio -->
+                    <div class="predio"> 🏢 </div>
+                    <!-- Caminho até o solo -->
+                    <div class="aterramento">
+                        │<br>│<br>│<br>↓
+                    </div>
+                    <p class="solo"> SOLO </p>
+                </div>
+            </div>
+
+            <!-- Botão do raio -->
+            <button class="botao-raio" onclick="acionarRaio('com')"> ⚡ ACIONAR RAIO </button>
+
+            <div class="explicacao">
+                <h2>Observe a diferença</h2>
+                <p> Clique no botão para observar como a descarga é direcionada pelo sistema de proteção até o solo. </p>
+            </div>
+
+            <!-- Navegação -->
+            <div class="botoes-navegacao">
+                <button onclick="mostrarTela('sem')"> ← Voltar </button>
+                <button onclick="mostrarTela('inicio')"> Voltar ao início </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== ÁUDIO =============================== -->
+    <audio id="chuva" loop>
+        <source src="sons/chuva.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="trovao">
+        <source src="sons/trovao.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- ============================== JAVASCRIPT =============================== -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
